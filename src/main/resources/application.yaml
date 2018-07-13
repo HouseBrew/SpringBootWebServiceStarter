@@ -1,0 +1,37 @@
+logging:
+  level:
+    .: error
+    org.springframework: ERROR
+    com.mkyong: ERROR
+
+spring:
+  profiles:
+    active: "dev"
+  main:
+    banner-mode: "off"
+---
+
+spring:
+  profiles: dev
+  jpa:
+      hibernate:
+        ddl-auto: update
+  datasource:
+      url: jdbc:mysql://localhost:3306/menu
+      username: root
+      password: password
+server:
+  address: 127.0.0.1
+
+---
+spring:
+  profiles: prod
+  jpa:
+      hibernate:
+        ddl-auto: update
+  datasource:
+      url: jdbc:mysql://localhost:3306/menu
+      username: root
+      password: password
+server:
+  address: 127.0.0.1
